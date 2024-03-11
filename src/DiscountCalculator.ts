@@ -39,8 +39,7 @@ export class DiscountCalculator {
     }
 
     private isFiftyPercentCode(discountCode: string): boolean {
-        // Tutaj należy zdefiniować pulę kodów uprawniających do 50% rabatu
-        const fiftyPercentCodes = ['CODE50A', 'CODE50B']; // Przykładowa pula kodów
+        const fiftyPercentCodes = ['CODE50A', 'CODE50B']; 
         return fiftyPercentCodes.includes(discountCode);
     }
 }
