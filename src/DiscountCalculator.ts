@@ -1,11 +1,11 @@
 import DiscountStrategy from "./interface/DiscountStrategy";
 import { NoDiscountStrategy, 
     TenPercentDiscountStrategy, 
-    TwentyPercentDiscountStrategy } from "./patterns/stratery-patterns";
+    TwentyPercentDiscountStrategy } from "./patterns/DiscountStrategyPatterns";
 
 export class DiscountCalculator {
     calculateDiscount(price: number, discountCode: string): number {
-        
+
       if (price < 0) {
         throw new Error('Negatives not allowed');
       }

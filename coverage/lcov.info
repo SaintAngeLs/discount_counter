@@ -1,5 +1,5 @@
 TN:
-SF:src/calculatorDiscount.ts
+SF:src/DiscountCalculator.ts
 FN:7,(anonymous_0)
 FN:17,(anonymous_1)
 FNF:2
@@ -28,7 +28,7 @@ BRF:5
 BRH:5
 end_of_record
 TN:
-SF:src/patterns/stratery-patterns.ts
+SF:src/patterns/DiscountStrategyPatterns.ts
 FN:4,(anonymous_0)
 FN:10,(anonymous_1)
 FN:16,(anonymous_2)

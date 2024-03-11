@@ -1,4 +1,4 @@
-import { DiscountCalculator } from "../../src/calculatorDiscount";
+import { DiscountCalculator } from "../../src/DiscountCalculator";
 
 
 describe('DiscountCalculator', () => {
