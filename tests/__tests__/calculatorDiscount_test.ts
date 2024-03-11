@@ -33,7 +33,7 @@ describe('DiscountCalculator', () => {
   });
 
   test('Drugi raz kod DISCOUNT20OFF nie powinien udzielić rabatu i zgłosić wyjątek.', () => {
-    calculator.calculateDiscount(100, 'CODE50A'); // Pierwsze użycie
+    calculator.calculateDiscount(100, 'CODE50A'); 
     expect(() => calculator.calculateDiscount(100, 'CODE50A')).toThrow('Discount code already used');
   });
 
@@ -42,7 +42,7 @@ describe('DiscountCalculator', () => {
   });
 
   test('Drugi raz kod DISCOUNT20OFF nie powinien udzielić rabatu i zgłosić wyjątek.', () => {
-    calculator.calculateDiscount(100, 'CODE50B'); // Pierwsze użycie
+    calculator.calculateDiscount(100, 'CODE50B'); 
     expect(() => calculator.calculateDiscount(100, 'CODE50B')).toThrow('Discount code already used');
   });
 });
