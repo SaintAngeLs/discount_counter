@@ -17,3 +17,10 @@ export class TwentyPercentDiscountStrategy implements DiscountStrategy {
         return price * 0.8;
     }
 }
+
+export class FiftyPercentDiscountStrategy implements DiscountStrategy {
+    applyDiscount(price: number): number {
+        return price * 0.5; 
+    }
+}
+

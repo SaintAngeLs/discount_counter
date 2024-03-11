@@ -27,4 +27,22 @@ describe('DiscountCalculator', () => {
   test('W przypadku błędnego kodu powinien być zwracany wyjątek ArgumentException z komunikatem "Invalid discount code"', () => {
     expect(() => calculator.calculateDiscount(100, 'INVALID')).toThrow('Invalid discount code');
   });
+
+  test('Pierwsze użycie kodu DISCOUNT20OFF powinno udzielić 50% rabatu.', () => {
+    expect(calculator.calculateDiscount(100, 'CODE50A')).toBe(50);
+  });
+
+  test('Drugi raz kod DISCOUNT20OFF nie powinien udzielić rabatu i zgłosić wyjątek.', () => {
+    calculator.calculateDiscount(100, 'CODE50A'); // Pierwsze użycie
+    expect(() => calculator.calculateDiscount(100, 'CODE50A')).toThrow('Discount code already used');
+  });
+
+  test('Pierwsze użycie kodu DISCOUNT20OFF powinno udzielić 50% rabatu.', () => {
+    expect(calculator.calculateDiscount(100, 'CODE50B')).toBe(50);
+  });
+
+  test('Drugi raz kod DISCOUNT20OFF nie powinien udzielić rabatu i zgłosić wyjątek.', () => {
+    calculator.calculateDiscount(100, 'CODE50B'); // Pierwsze użycie
+    expect(() => calculator.calculateDiscount(100, 'CODE50B')).toThrow('Discount code already used');
+  });
 });
