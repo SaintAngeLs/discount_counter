@@ -8,23 +8,23 @@ describe('DiscountCalculator', () => {
     calculator = new DiscountCalculator();
   });
 
-  test('should not apply discount with an empty code', () => {
+  test('W przypadku podania pustego kodu rabat nie będzie udzielany.', () => {
     expect(calculator.calculateDiscount(100, '')).toBe(100);
   });
 
-  test('should apply a 10% discount with code SAVE10NOW', () => {
+  test('Dodaj rabat 10%, który będzie naliczany po podaniu kodu kuponu SAVE10NOW', () => {
     expect(calculator.calculateDiscount(100, 'SAVE10NOW')).toBe(90);
   });
 
-  test('should apply a 20% discount with code DISCOUNT20OFF', () => {
+  test('Dodaj rabat 20%, który będzie naliczany po podaniu kodu kuponu DISCOUNT20OFF.', () => {
     expect(calculator.calculateDiscount(100, 'DISCOUNT20OFF')).toBe(80);
   });
 
-  test('should throw an error for negative prices', () => {
+  test('Wywołanie metody CalculateDiscount z ujemną ceną powinno rzucić wyjątkiem ArgumentException z komunikatem "Negatives not allowed".', () => {
     expect(() => calculator.calculateDiscount(-100, 'SAVE10NOW')).toThrow('Negatives not allowed');
   });
 
-  test('should throw an error for invalid discount codes', () => {
+  test('W przypadku błędnego kodu powinien być zwracany wyjątek ArgumentException z komunikatem "Invalid discount code"', () => {
     expect(() => calculator.calculateDiscount(100, 'INVALID')).toThrow('Invalid discount code');
   });
 });
